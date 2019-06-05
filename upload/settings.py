@@ -24,6 +24,7 @@ IMAGE_ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg']) # 图片上传类型限�
 HEADER_DIR_LENGTH = 2
 header_image_dir = 'header/' # 用户头像
 HEADER_BASE_DIR = os.path.join(settings.RESOURCES_DIR, header_image_dir)
+HEADER_SIZE_LIMIT = 2 # Mb
 
 
 else_dir = 'else/'

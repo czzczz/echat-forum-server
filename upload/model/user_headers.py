@@ -17,6 +17,12 @@ class UserHeaders(Document):
         addrList = findall(r'.{3}', self.img_addr_code)
         return '/'.join(addrList) + '/'
 
+    def getImagePath(self):
+        return HEADER_BASE_DIR + self._getImageAddrValue() + self.img_md5 + '.' + self.img_type
+
+    def getImageUrl(self):
+        return 'header/?img=' + self.img_md5
+
     def __str__(self):
         s = self.img_addr_code + '_' + self.img_md5 + '.' + self.img_type
         return s

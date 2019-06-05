@@ -9,7 +9,7 @@ from upload.model.upload_files import UploadFiles
 
 @require_http_methods(["GET"])
 def serve(request):
-    md5 = request.GET['downId']
+    md5 = request.GET['file']
     userCheck = request.GET['user']
 
     if not userCheck:

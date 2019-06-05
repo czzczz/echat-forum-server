@@ -24,7 +24,13 @@ class UploadFiles(Document):
         return '/'.join(addrList) + '/'
 
     def getFileUrl(self):
-        url =self.file_md5 + '.' + self.file_type
+        if self.file_type in IMAGE_ALLOWED_EXTENSIONS:
+            baseUrl = 'image/'
+        elif self.file_type in ARCHIVE_ALLOWED_EXTENSIONS:
+            baseUrl = 'archive/'
+        else:
+            baseUrl = 'else/'
+        url =baseUrl + '?file=' + self.file_md5
         return url
     # 获取本图片在本地的位置，即你的文件系统的路径，图片会保存在这个路径下
     def getFilePath(self):
