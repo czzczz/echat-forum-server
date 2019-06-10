@@ -1,6 +1,6 @@
 # 引入外部库
 from django.views.decorators.http import require_http_methods
-from django.http import HttpResponse, HttpResponseServerError
+from django.http import HttpResponse, HttpResponseServerError, JsonResponse
 # from django.shortcuts import render
 import filetype, hashlib
 import json
@@ -30,7 +30,7 @@ def Get(request):
     uploadImg = UploadFiles.getFileByMd5(md5)
     if uploadImg:   # 图片文件已存在， 直接返回
         print('文件已有', uploadImg)
-        return HttpResponse(json.dumps({'url': uploadImg.getFileUrl()}))
+        return JsonResponse({'url': uploadImg.getImageViewer()})
 
     # 获取扩展类型 并 判断
     ext = _getFileExtension(file)
@@ -72,7 +72,7 @@ def Get(request):
             f.write(chunk)
 
     # 返回图片的url以供访问
-    return HttpResponse(json.dumps({'url': uploadImg.getFileUrl()}))
+    return JsonResponse({'url': uploadImg.getImageViewer()})
 
 
 
