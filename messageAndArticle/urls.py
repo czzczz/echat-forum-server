@@ -1,7 +1,9 @@
 from django.urls import path
 
-from messageAndArticle.view.messages import Update
+from messageAndArticle.view.messages import Update as MessageUpdate
+from messageAndArticle.view.articles import Update as ArticleUpdate
 
 urlpatterns = [
-    path('update', Update),
+    path('message', MessageUpdate),
+    path('article', ArticleUpdate),
 ]

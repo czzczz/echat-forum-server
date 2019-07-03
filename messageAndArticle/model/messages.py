@@ -1,4 +1,4 @@
-from mongoengine import Document, StringField, ListField, IntField, DictField
+from mongoengine import Document, StringField, ListField, IntField, LongField, DictField
 from bson.objectid import ObjectId
 import json
 import time
@@ -12,10 +12,10 @@ class Messages(Document):
     user = StringField(max_length=25)
     tags = ListField()
     changeHistory = ListField()
-    comments = ListField()
+    comments = StringField()
     thumbsUp = ListField()
-    createdAt = IntField()
-    updatedAt = IntField()
+    createdAt = LongField()
+    updatedAt = LongField()
 
 
     def getContentDifferenceList(self, s2):

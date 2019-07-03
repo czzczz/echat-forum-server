@@ -23,7 +23,7 @@ urlpatterns = [
     path('upload', Upload.Get),
     path("upload/", include('upload.urls')),
     path('email/', include('emailServer.urls')),
-    path('message/', include('messageAndArticle.urls')),
+    path('update/', include('messageAndArticle.urls')),
 
 
     path('', include('resourcesServer.urls')),
