@@ -2,7 +2,7 @@ from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse,HttpResponse
 import json
 
-from ..model.articles import Articles
+from messageAndArticle.model.articles import Articles
 
 
 @require_http_methods(['POST'])

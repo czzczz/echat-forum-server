@@ -6,7 +6,7 @@ import time
 import difflib
 
 
-from ..model.messages import Messages
+from messageAndArticle.model.messages import Messages
 
 
 @require_http_methods(['POST'])

@@ -8,7 +8,7 @@ import os
 import re
 import random
 
-from ..model.upload_files import UploadFiles
+from upload.model.upload_files import UploadFiles
 
 from ..settings import *
 

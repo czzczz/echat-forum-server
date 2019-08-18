@@ -8,7 +8,7 @@ import os
 import re
 import random
 
-from ..model.upload_files import UploadFiles
+from upload.model.upload_files import UploadFiles
 
 from ..settings import archive_dir, ARCHIVE_ALLOWED_EXTENSIONS, ARCHIVE_BASE_DIR, ARCHIVE_SIZE_LIMIT, DIR_LENGTH
 

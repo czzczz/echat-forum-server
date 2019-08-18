@@ -8,7 +8,7 @@ import os
 import re
 import random
 # 引入模块
-from ..model.upload_files import UploadFiles
+from upload.model.upload_files import UploadFiles
 # 引入配置
 from ..settings import IMAGE_BASE_DIR, IMAGE_SIZE_LIMIT, IMAGE_ALLOWED_EXTENSIONS, DIR_LENGTH
 

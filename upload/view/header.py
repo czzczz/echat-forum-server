@@ -12,7 +12,7 @@ import os
 import re
 import random
 
-from ..model.user_headers import UserHeaders
+from upload.model.user_headers import UserHeaders
 
 from ..settings import header_image_dir, HEADER_BASE_DIR, HEADER_DIR_LENGTH,IMAGE_ALLOWED_EXTENSIONS,HEADER_SIZE_LIMIT
 

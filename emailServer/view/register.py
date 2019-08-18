@@ -5,7 +5,7 @@ from django.http import HttpResponse, JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.core.mail import send_mail
 
-from ..models import Users
+from emailServer.models import Users
 
 from django.conf import settings
 from ..settings import DOMAIN_DICT, MAIL_HOME_DICT, NAME_ENCODE_DICT, HOST_ADDR_BASE
@@ -15,7 +15,7 @@ from ..settings import DOMAIN_DICT, MAIL_HOME_DICT, NAME_ENCODE_DICT, HOST_ADDR_
 @require_http_methods(["POST"])
 def sendCheck(request):
     userInfo = json.loads(request.body)['userInfo']
-    # print(userInfo)
+    print(userInfo)
 
     # 生成校验地址的url参数
     urlArg, timeS = _encodeUrlArg(userInfo['email'])
