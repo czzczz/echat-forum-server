@@ -41,8 +41,8 @@ class Articles(Document):
         old = Articles.getArticleById(aid)
 
         changeLog = {
-            'title': Articles.getDifferenceList(old.title, atc.title),
-            'content': Articles.getDifferenceList(old.content, atc.content),
+            'title': Articles.getDifferenceList(old['title'], atc['title']),
+            'content': Articles.getDifferenceList(old['content'], atc['content']),
             'time': int(round(time.time() * 1000)),
         }
         print(changeLog)
